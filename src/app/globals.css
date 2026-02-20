@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+body {
+  @apply bg-space-dark text-white;
+  font-family: var(--font-inter);
+  background-image: theme('backgroundImage.space-gradient');
+  min-height: 100vh;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-glass rounded-2xl;
+}
+
+.glass-light {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl;
+}
+
+.text-neon {
+  text-shadow: 0 0 10px #00F0FF, 0 0 20px #8B5CF6;
+}
