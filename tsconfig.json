@@ -1,34 +1,44 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    // Target moderno — compatible con todos los browsers actuales
+    "target": "ES2020",
     "lib": ["dom", "dom.iterable", "esnext"],
+
+    // JS y TS conviven sin problemas
     "allowJs": true,
     "skipLibCheck": true,
+
+    // Modo estricto completo — te salva de muchos bugs
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+
+    // Resolución moderna tipo bundler (Vite/Next style)
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
+
+    // Compilación incremental más rápida
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "tsBuildInfoFile": ".next/cache/tsconfig.tsbuildinfo",
+
+    // Paths — usa @/ para importar desde src/
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    // Plugin oficial de Next.js para tipos de rutas
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.mts",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next", "out"]
 }
